@@ -3,13 +3,14 @@ FROM php:7-apache
 
 MAINTAINER Marty Zhang <marty8zhang@gmail.com>
 
-# Install Apps.
+# Install OS packages.
 RUN apt-get update && \
     apt-get install -y \
         zip \
         unzip \
         git \
-        nano
+        nano \
+        mysql-client
 
 # Install PHP extensions.
 RUN docker-php-ext-install \
